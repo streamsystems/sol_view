@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -60,11 +75,41 @@
   <ItemGroup>
     <Compile Include="fld_BL\cls_bl.cs" />
     <Compile Include="fld_DAL\cls_dal.cs" />
+    <Compile Include="fld_PL\fld_Accounting\fld_Settings\frm_chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fld_PL\fld_Accounting\fld_Settings\frm_chart.Designer.cs">
+      <DependentUpon>frm_chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_branches.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_branches.Designer.cs">
+      <DependentUpon>frm_branches.cs</DependentUpon>
+    </Compile>
     <Compile Include="fld_PL\fld_General_Settings\frm_companies.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fld_PL\fld_General_Settings\frm_companies.Designer.cs">
       <DependentUpon>frm_companies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_currencies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_currencies.Designer.cs">
+      <DependentUpon>frm_currencies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_fyears.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_fyears.Designer.cs">
+      <DependentUpon>frm_fyears.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_stores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fld_PL\fld_General_Settings\frm_stores.Designer.cs">
+      <DependentUpon>frm_stores.cs</DependentUpon>
     </Compile>
     <Compile Include="fld_PL\fld_General_Settings\frm_users.cs">
       <SubType>Form</SubType>
@@ -98,6 +143,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fld_PL\fld_Accounting\fld_Settings\frm_chart.resx">
+      <DependentUpon>frm_chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fld_PL\fld_General_Settings\frm_branches.resx">
+      <DependentUpon>frm_branches.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fld_PL\fld_General_Settings\frm_currencies.resx">
+      <DependentUpon>frm_currencies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fld_PL\fld_General_Settings\frm_fyears.resx">
+      <DependentUpon>frm_fyears.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fld_PL\fld_General_Settings\frm_stores.resx">
+      <DependentUpon>frm_stores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fld_PL\fld_General_Settings\frm_users.resx">
       <DependentUpon>frm_users.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,7 +195,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="fld_PL\fld_Accounting\fld_Settings\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Lock_128.png" />

@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace pro_view.fld_PL.fld_General_Settings
 {
-    public partial class frm_users : Form
+    public partial class frm_stores : Form
     {
         #region Declarations
         public pro_view.fld_PL.fld_Login.frm_main frm_main;
-        pro_view.fld_BL.cls_bl.stc_General_Settings.stc_users module = new fld_BL.cls_bl.stc_General_Settings.stc_users();
+        pro_view.fld_BL.cls_bl.stc_General_Settings.stc_stores module = new fld_BL.cls_bl.stc_General_Settings.stc_stores();
         DataSet ds = new DataSet();
         int record_index;
         #endregion
 
-        public frm_users()
+        public frm_stores()
         {
             InitializeComponent();
 
@@ -29,28 +29,17 @@ namespace pro_view.fld_PL.fld_General_Settings
         #region Form
         private void frm_G_Shown(object sender, EventArgs e)
         {
-            //ControlsName();
+            ControlsName();
             Refresh_Data();
 
-            com_gender_id.DataSource = ds.Tables["gender"];
-            com_gender_id.ValueMember = "id";
-            com_gender_id.DisplayMember = "aname";
+            com_company_id.DataSource = ds.Tables["tbl_companies"];
+            com_company_id.ValueMember = "id";
+            com_company_id.DisplayMember = "aname";
 
-            com_defaultcompany_id.DataSource = ds.Tables[2];
-            com_defaultcompany_id.ValueMember = "id";
-            com_defaultcompany_id.DisplayMember = "aname";
+            com_branch_id.DataSource = ds.Tables["tbl_branches"];
+            com_branch_id.ValueMember = "id";
+            com_branch_id.DisplayMember = "aname";
 
-            com_defaultbranch_id.DataSource = ds.Tables[3];
-            com_defaultbranch_id.ValueMember = "id";
-            com_defaultbranch_id.DisplayMember = "aname";
-
-            com_defaultstore_id.DataSource = ds.Tables[4];
-            com_defaultstore_id.ValueMember = "id";
-            com_defaultstore_id.DisplayMember = "aname";
-
-            com_defaultfyear_id.DataSource = ds.Tables[5];
-            com_defaultfyear_id.ValueMember = "id";
-            com_defaultfyear_id.DisplayMember = "aname";
 
             if (dgv.Rows.Count > 0)
             {
@@ -137,7 +126,7 @@ namespace pro_view.fld_PL.fld_General_Settings
                     ClearForm();
 
                     txt_aname.Focus();
-                    com_gender_id.SelectedValue = 1;
+                    com_company_id.SelectedValue = -1;
                     break;
                 #endregion
 
@@ -175,23 +164,13 @@ namespace pro_view.fld_PL.fld_General_Settings
                             txt_id.Text = r["id"].ToString();
                             txt_aname.Text = r["aname"].ToString();
                             txt_ename.Text = r["ename"].ToString();
-                            txt_password.Text = r["password"].ToString();
-                            com_gender_id.SelectedValue = r["gender_id"].ToString();
-                            txt_jobtitle.Text = r["jobtitle"].ToString();
+                            txt_responame.Text = r["responame"].ToString();
                             txt_mobile1.Text = r["mobile1"].ToString();
                             txt_mobile2.Text = r["mobile2"].ToString();
                             txt_phone1.Text = r["phone1"].ToString();
                             txt_phone2.Text = r["phone2"].ToString();
-                            txt_email.Text = r["email"].ToString();
-                            com_permission_id.SelectedValue = r["permission_id"].ToString();
-                            txt_allowedcompanies_ids.Text = r["allowedcompanies_ids"].ToString();
-                            txt_allowedbranches_ids.Text = r["allowedbranches_ids"].ToString();
-                            txt_allowedstores_ids.Text = r["allowedstores_ids"].ToString();
-                            txt_allowedfyears_ids.Text = r["allowedfyears_ids"].ToString();
-                            com_defaultcompany_id.SelectedValue = r["defaultcompany_id"].ToString();
-                            com_defaultbranch_id.SelectedValue = r["defaultbranch_id"].ToString();
-                            com_defaultstore_id.SelectedValue = r["defaultstore_id"].ToString();
-                            com_defaultfyear_id.SelectedValue = r["defaultfyear_id"].ToString();
+                            com_company_id.SelectedValue = r["company_id"].ToString();
+                            com_branch_id.SelectedValue = r["branch_id"].ToString();
                             txt_notes.Text = r["notes"].ToString();
                             chk_stop.Checked = Convert.ToBoolean(r["stop"]);
                             lbl_creationtime.Text = r["creationtime"].ToString();
@@ -201,13 +180,15 @@ namespace pro_view.fld_PL.fld_General_Settings
                             if (r["edit"].ToString() != "0")
                             {
                                 btn_info.Visible = true;
-                                btn_info.Text = "معدل" + r["edit"].ToString();
+                                btn_info.Text = "معدل" + " " + r["edit"].ToString();
                             }
                             else
                             {
                                 btn_info.Visible = false;
                                 btn_info.Text = "";
                             }
+
+
                         }
                     }
 
@@ -243,32 +224,21 @@ namespace pro_view.fld_PL.fld_General_Settings
             module.id = txt_id.Text.Trim();
             module.aname = txt_aname.Text.Trim();
             module.ename = txt_ename.Text.Trim();
-            module.password = txt_password.Text.Trim();
-            module.gender_id = (com_gender_id.SelectedValue != null) ? Convert.ToInt32(com_gender_id.SelectedValue) : 1;
-            module.jobtitle = txt_jobtitle.Text.Trim();
+            module.responame = txt_responame.Text.Trim();
             module.mobile1 = txt_mobile1.Text.Trim();
             module.mobile2 = txt_mobile2.Text.Trim();
             module.phone1 = txt_phone1.Text.Trim();
             module.phone2 = txt_phone2.Text.Trim();
-            module.email = txt_email.Text.Trim();
-            module.permission_id = (com_permission_id.SelectedValue != null) ? com_permission_id.SelectedValue.ToString() : string.Empty;
-            module.allowedcompanies_ids = txt_allowedcompanies_ids.Text.Trim();
-            module.allowedbranches_ids = txt_allowedbranches_ids.Text.Trim();
-            module.allowedstores_ids = txt_allowedstores_ids.Text.Trim();
-            module.allowedfyears_ids = txt_allowedfyears_ids.Text.Trim();
-            module.defaultcompany_id = (com_defaultcompany_id.SelectedValue != null) ? com_defaultcompany_id.SelectedValue.ToString() : string.Empty;
-            module.defaultbranch_id = (com_defaultbranch_id.SelectedValue != null) ? com_defaultbranch_id.SelectedValue.ToString() : string.Empty;
-            module.defaultstore_id = (com_defaultstore_id.SelectedValue != null) ? com_defaultstore_id.SelectedValue.ToString() : string.Empty;
-            module.defaultfyear_id = (com_defaultfyear_id.SelectedValue != null) ? com_defaultfyear_id.SelectedValue.ToString() : string.Empty;
+            module.company_id = (com_company_id.SelectedValue != null) ? com_company_id.SelectedValue.ToString() : string.Empty;
+            module.branch_id = (com_branch_id.SelectedValue != null) ? com_branch_id.SelectedValue.ToString() : string.Empty;
             module.notes = txt_notes.Text.Trim();
             module.stop = chk_stop.Checked;
-            module.user_id = "demo";
-            //module.user_id = frm_main.com_users.SelectedValue.ToString();
+            module.user_id = frm_main.com_users.SelectedValue.ToString();
         }
         void Refresh_Data()
         {
             ds = module.Select();
-            dgv.DataSource = ds.Tables[0]; 
+            dgv.DataSource = ds.Tables[0];
 
             if (dgv.Rows.Count > 0)
             {

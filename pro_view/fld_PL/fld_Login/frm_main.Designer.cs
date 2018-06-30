@@ -36,18 +36,18 @@
             this.flp_Chart = new System.Windows.Forms.FlowLayoutPanel();
             this.tab_Board = new System.Windows.Forms.TabControl();
             this.pnl_MainButtons = new System.Windows.Forms.FlowLayoutPanel();
-            this.المستخدمونToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_currencies = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.الفروعToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الشركاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.الإعداداتToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.المستخدمونToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_users = new System.Windows.Forms.ToolStripMenuItem();
             this.السنواتالماليةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.بناءالقيودToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.مراكزالتكلفةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList32 = new System.Windows.Forms.ImageList(this.components);
-            this.دليلالحساباتToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_chart = new System.Windows.Forms.ToolStripMenuItem();
             this.كشفحسابToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.قيوداليوميةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.بناءالقيودToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,34 +128,38 @@
             this.pnl_MainButtons.Size = new System.Drawing.Size(1272, 110);
             this.pnl_MainButtons.TabIndex = 34;
             // 
-            // المستخدمونToolStripMenuItem
+            // tsm_currencies
             // 
-            this.المستخدمونToolStripMenuItem.Name = "المستخدمونToolStripMenuItem";
-            this.المستخدمونToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.المستخدمونToolStripMenuItem.Text = "العملات";
+            this.tsm_currencies.Name = "tsm_currencies";
+            this.tsm_currencies.Size = new System.Drawing.Size(149, 22);
+            this.tsm_currencies.Text = "العملات";
+            this.tsm_currencies.Click += new System.EventHandler(this.tsm_currencies_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItem2.Text = "السنوات المالية";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
             this.toolStripMenuItem1.Text = "المستودعات";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // الفروعToolStripMenuItem
             // 
             this.الفروعToolStripMenuItem.Name = "الفروعToolStripMenuItem";
-            this.الفروعToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.الفروعToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.الفروعToolStripMenuItem.Text = "الفروع";
+            this.الفروعToolStripMenuItem.Click += new System.EventHandler(this.الفروعToolStripMenuItem_Click);
             // 
             // الشركاتToolStripMenuItem
             // 
             this.الشركاتToolStripMenuItem.Name = "الشركاتToolStripMenuItem";
-            this.الشركاتToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.الشركاتToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.الشركاتToolStripMenuItem.Text = "الشركات";
             this.الشركاتToolStripMenuItem.Click += new System.EventHandler(this.الشركاتToolStripMenuItem_Click);
             // 
@@ -166,35 +170,35 @@
             this.الفروعToolStripMenuItem,
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
-            this.المستخدمونToolStripMenuItem,
-            this.المستخدمونToolStripMenuItem1});
+            this.tsm_currencies,
+            this.tsm_users});
             this.الإعداداتToolStripMenuItem1.Name = "الإعداداتToolStripMenuItem1";
             this.الإعداداتToolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.الإعداداتToolStripMenuItem1.Text = "الإعدادات";
             // 
-            // المستخدمونToolStripMenuItem1
+            // tsm_users
             // 
-            this.المستخدمونToolStripMenuItem1.Name = "المستخدمونToolStripMenuItem1";
-            this.المستخدمونToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.المستخدمونToolStripMenuItem1.Text = "المستخدمون";
-            this.المستخدمونToolStripMenuItem1.Click += new System.EventHandler(this.المستخدمونToolStripMenuItem1_Click);
+            this.tsm_users.Name = "tsm_users";
+            this.tsm_users.Size = new System.Drawing.Size(149, 22);
+            this.tsm_users.Text = "المستخدمون";
+            this.tsm_users.Click += new System.EventHandler(this.tsm_users_Click);
             // 
             // السنواتالماليةToolStripMenuItem
             // 
             this.السنواتالماليةToolStripMenuItem.Name = "السنواتالماليةToolStripMenuItem";
-            this.السنواتالماليةToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.السنواتالماليةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.السنواتالماليةToolStripMenuItem.Text = "السنوات المالية";
             // 
             // بناءالقيودToolStripMenuItem2
             // 
             this.بناءالقيودToolStripMenuItem2.Name = "بناءالقيودToolStripMenuItem2";
-            this.بناءالقيودToolStripMenuItem2.Size = new System.Drawing.Size(149, 22);
+            this.بناءالقيودToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.بناءالقيودToolStripMenuItem2.Text = "بناء القيود";
             // 
             // مراكزالتكلفةToolStripMenuItem
             // 
             this.مراكزالتكلفةToolStripMenuItem.Name = "مراكزالتكلفةToolStripMenuItem";
-            this.مراكزالتكلفةToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.مراكزالتكلفةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.مراكزالتكلفةToolStripMenuItem.Text = "مراكز التكلفة";
             // 
             // imageList32
@@ -219,40 +223,41 @@
             this.imageList32.Images.SetKeyName(15, "dowen_32.png");
             this.imageList32.Images.SetKeyName(16, "up_32.png");
             // 
-            // دليلالحساباتToolStripMenuItem1
+            // tsm_chart
             // 
-            this.دليلالحساباتToolStripMenuItem1.Name = "دليلالحساباتToolStripMenuItem1";
-            this.دليلالحساباتToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
-            this.دليلالحساباتToolStripMenuItem1.Text = "دليل الحسابات";
+            this.tsm_chart.Name = "tsm_chart";
+            this.tsm_chart.Size = new System.Drawing.Size(180, 22);
+            this.tsm_chart.Text = "دليل الحسابات";
+            this.tsm_chart.Click += new System.EventHandler(this.tsm_chart_Click);
             // 
             // كشفحسابToolStripMenuItem
             // 
             this.كشفحسابToolStripMenuItem.Name = "كشفحسابToolStripMenuItem";
-            this.كشفحسابToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.كشفحسابToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.كشفحسابToolStripMenuItem.Text = "الميزانية العمومية";
             // 
             // قيوداليوميةToolStripMenuItem
             // 
             this.قيوداليوميةToolStripMenuItem.Name = "قيوداليوميةToolStripMenuItem";
-            this.قيوداليوميةToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.قيوداليوميةToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.قيوداليوميةToolStripMenuItem.Text = "قائمة الدخل";
             // 
             // بناءالقيودToolStripMenuItem1
             // 
             this.بناءالقيودToolStripMenuItem1.Name = "بناءالقيودToolStripMenuItem1";
-            this.بناءالقيودToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
+            this.بناءالقيودToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.بناءالقيودToolStripMenuItem1.Text = "ميزان المراجعة";
             // 
             // بناءالقيودToolStripMenuItem
             // 
             this.بناءالقيودToolStripMenuItem.Name = "بناءالقيودToolStripMenuItem";
-            this.بناءالقيودToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.بناءالقيودToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.بناءالقيودToolStripMenuItem.Text = "كشف حساب";
             // 
             // دليلالحساباتToolStripMenuItem
             // 
             this.دليلالحساباتToolStripMenuItem.Name = "دليلالحساباتToolStripMenuItem";
-            this.دليلالحساباتToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.دليلالحساباتToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.دليلالحساباتToolStripMenuItem.Text = "قيود اليومية";
             // 
             // الحساباتToolStripMenuItem
@@ -271,12 +276,12 @@
             // الإعداداتToolStripMenuItem
             // 
             this.الإعداداتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.دليلالحساباتToolStripMenuItem1,
+            this.tsm_chart,
             this.مراكزالتكلفةToolStripMenuItem,
             this.بناءالقيودToolStripMenuItem2,
             this.السنواتالماليةToolStripMenuItem});
             this.الإعداداتToolStripMenuItem.Name = "الإعداداتToolStripMenuItem";
-            this.الإعداداتToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.الإعداداتToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.الإعداداتToolStripMenuItem.Text = "الإعدادات";
             // 
             // men_Main
@@ -419,7 +424,7 @@
         public System.Windows.Forms.FlowLayoutPanel flp_Chart;
         private System.Windows.Forms.TabControl tab_Board;
         public System.Windows.Forms.FlowLayoutPanel pnl_MainButtons;
-        private System.Windows.Forms.ToolStripMenuItem المستخدمونToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsm_currencies;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem الفروعToolStripMenuItem;
@@ -429,7 +434,7 @@
         private System.Windows.Forms.ToolStripMenuItem بناءالقيودToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem مراكزالتكلفةToolStripMenuItem;
         public System.Windows.Forms.ImageList imageList32;
-        private System.Windows.Forms.ToolStripMenuItem دليلالحساباتToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsm_chart;
         private System.Windows.Forms.ToolStripMenuItem كشفحسابToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem قيوداليوميةToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem بناءالقيودToolStripMenuItem1;
@@ -445,6 +450,6 @@
         private System.Windows.Forms.Button btn_Branche;
         private System.Windows.Forms.Button btn_Database;
         private System.Windows.Forms.Panel pnl_Header;
-        private System.Windows.Forms.ToolStripMenuItem المستخدمونToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsm_users;
     }
 }

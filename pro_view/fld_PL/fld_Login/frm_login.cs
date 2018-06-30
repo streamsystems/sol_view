@@ -159,6 +159,39 @@ namespace pro_view.fld_PL.fld_Login
         #endregion
 
         #region Details
+
+        #region Dispaly
+        private void btn_Lock_MouseEnter(object sender, EventArgs e)
+        {
+            btn_Lock.FlatStyle = FlatStyle.Popup;
+        }
+
+        private void btn_Lock_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Lock.FlatStyle = FlatStyle.Flat;
+        }
+
+        private void btn_Demo_MouseEnter(object sender, EventArgs e)
+        {
+            btn_Demo.FlatStyle = FlatStyle.Popup;
+        }
+
+        private void btn_Demo_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Demo.FlatStyle = FlatStyle.Flat;
+        }
+
+        private void btn_ServerConSettings_MouseEnter(object sender, EventArgs e)
+        {
+            btn_ServerConSettings.FlatStyle = FlatStyle.Popup;
+        }
+
+        private void btn_ServerConSettings_MouseLeave(object sender, EventArgs e)
+        {
+            btn_ServerConSettings.FlatStyle = FlatStyle.Flat;
+        }
+        #endregion
+
         private void txt_Name_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13) SendKeys.Send("{TAB}");
@@ -169,46 +202,45 @@ namespace pro_view.fld_PL.fld_Login
         }
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            //model.aname = txt_Name.Text.Trim();
-            //model.ename = txt_Name.Text;
-            //model.password = txt_Password.Text.Trim();
+            model.aname = txt_Name.Text.Trim();
+            model.ename = txt_Name.Text;
+            model.password = txt_Password.Text.Trim();
 
-            //DataTable dt = new DataTable();
-            //dt = model.Select().Tables[0];
+            DataTable dt = new DataTable();
+            dt = model.Select().Tables[0];
 
-            //foreach (DataRow r in dt.Rows)
-            //{
-            //    if ((r["aname"].ToString() == model.aname || r["ename"].ToString() == model.ename) && r["password"].ToString() == model.password)
-            //    {
-            //        Hide();
-            //        string c = CheckAth();
-            //        if (c == "OK")
-            //        {
-
-            //            user_id = r["id"].ToString();
-            //            frm_main.UserID = user_id;
-            //            frm_main.Show();
-            //            Properties.Settings.Default.LoginUser = txt_Name.Text;
-            //            Properties.Settings.Default.Save();
-            //            return;
-            //        }
-            //        else
-            //        {
-            //            pro_view.fld_PL.fld_Login.frm_preventnu p = new frm_preventnu();
-            //            p.UserID = r["id"].ToString();
-            //            p.Case = c;
-            //            p.frm_main = frm_main;
-            //            p.ShowDialog();
-            //            return;
-            //        }
-            //    }
-            //}
-            //MessageBox.Show("أسم المستخدم أو كلمة المرور غير صحيحة", "خطأ في بيانات الدخول", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            foreach (DataRow r in dt.Rows)
+            {
+                if ((r["aname"].ToString() == model.aname || r["ename"].ToString() == model.ename) && r["password"].ToString() == model.password)
+                {
+                    Hide();
+                    string c = CheckAth();
+                    if (c == "OK")
+                    {
+                        user_id = r["id"].ToString();
+                        frm_main.com_users.SelectedValue = user_id;
+                        frm_main.Show();
+                        Properties.Settings.Default.LoginUser = txt_Name.Text;
+                        Properties.Settings.Default.Save();
+                        return;
+                    }
+                    else
+                    {
+                        pro_view.fld_PL.fld_Login.frm_preventnu p = new frm_preventnu();
+                        p.UserID = r["id"].ToString();
+                        p.Case = c;
+                        p.frm_main = frm_main;
+                        p.ShowDialog();
+                        return;
+                    }
+                }
+            }
+            MessageBox.Show("أسم المستخدم أو كلمة المرور غير صحيحة", "خطأ في بيانات الدخول", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
         private void btn_Demo_Click(object sender, EventArgs e)
         {
             Hide();
-            frm_main.com_users.SelectedValue = "Demo";
+            frm_main.com_users.SelectedValue = "demo";
             frm_main.Show();
         }
         private void btn_ServerConSettings_Click(object sender, EventArgs e)
@@ -217,15 +249,5 @@ namespace pro_view.fld_PL.fld_Login
             s.ShowDialog();
         }
         #endregion
-
-        private void btn_Lock_MouseEnter(object sender, EventArgs e)
-        {
-            btn_Lock.FlatStyle = FlatStyle.Popup;
-        }
-
-        private void btn_Lock_MouseLeave(object sender, EventArgs e)
-        {
-            btn_Lock.FlatStyle = FlatStyle.Flat;
-        }
     }
 }

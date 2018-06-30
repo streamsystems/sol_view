@@ -49,6 +49,7 @@ namespace pro_view.fld_PL.fld_Login
             if (result == DialogResult.Yes)
             {
                 //g.BackupDatabase(AppDomain.CurrentDomain.BaseDirectory + "BACKUP");
+                Application.ExitThread();
                 Environment.Exit(1);
             }
             else if (result == DialogResult.No)
@@ -89,7 +90,49 @@ namespace pro_view.fld_PL.fld_Login
             f.Show();
         }
 
-        private void المستخدمونToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void الفروعToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pro_view.fld_PL.fld_General_Settings.frm_branches f = new fld_General_Settings.frm_branches();
+            f.btn_New.Image = imageList_48.Images["New_48.png"];
+            f.btn_Edit.Image = imageList_48.Images["Edit_48.png"];
+            f.btn_Save.Image = imageList_48.Images["Save_48.png"];
+            f.btn_Cancel.Image = imageList_48.Images["Cancel_48.png"];
+            f.btn_Delete.Image = imageList_48.Images["Delete_48.png"];
+            f.frm_main = this;
+            f.Text = "الفروع";
+
+            f.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            pro_view.fld_PL.fld_General_Settings.frm_stores f = new fld_General_Settings.frm_stores();
+            f.btn_New.Image = imageList_48.Images["New_48.png"];
+            f.btn_Edit.Image = imageList_48.Images["Edit_48.png"];
+            f.btn_Save.Image = imageList_48.Images["Save_48.png"];
+            f.btn_Cancel.Image = imageList_48.Images["Cancel_48.png"];
+            f.btn_Delete.Image = imageList_48.Images["Delete_48.png"];
+            f.frm_main = this;
+            f.Text = "المستودعات";
+
+            f.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            pro_view.fld_PL.fld_General_Settings.frm_fyears f = new fld_General_Settings.frm_fyears();
+            f.btn_New.Image = imageList_48.Images["New_48.png"];
+            f.btn_Edit.Image = imageList_48.Images["Edit_48.png"];
+            f.btn_Save.Image = imageList_48.Images["Save_48.png"];
+            f.btn_Cancel.Image = imageList_48.Images["Cancel_48.png"];
+            f.btn_Delete.Image = imageList_48.Images["Delete_48.png"];
+            f.frm_main = this;
+            f.Text = "السنوات المالية";
+
+            f.Show();
+        }
+
+        private void tsm_users_Click(object sender, EventArgs e)
         {
             pro_view.fld_PL.fld_General_Settings.frm_users f = new fld_General_Settings.frm_users();
             f.btn_New.Image = imageList_48.Images["New_48.png"];
@@ -99,6 +142,34 @@ namespace pro_view.fld_PL.fld_Login
             f.btn_Delete.Image = imageList_48.Images["Delete_48.png"];
             f.frm_main = this;
             f.Text = "المستخدمون";
+
+            f.Show();
+        }
+
+        private void tsm_currencies_Click(object sender, EventArgs e)
+        {
+            pro_view.fld_PL.fld_General_Settings.frm_currencies f = new fld_General_Settings.frm_currencies();
+            f.btn_New.Image = imageList_48.Images["New_48.png"];
+            f.btn_Edit.Image = imageList_48.Images["Edit_48.png"];
+            f.btn_Save.Image = imageList_48.Images["Save_48.png"];
+            f.btn_Cancel.Image = imageList_48.Images["Cancel_48.png"];
+            f.btn_Delete.Image = imageList_48.Images["Delete_48.png"];
+            f.frm_main = this;
+            f.Text = "العملات";
+
+            f.Show();
+        }
+
+        private void tsm_chart_Click(object sender, EventArgs e)
+        {
+            pro_view.fld_PL.fld_Accounting.fld_Settings.frm_chart f = new fld_Accounting.fld_Settings.frm_chart();
+            f.btn_New.Image = imageList_48.Images["New_48.png"];
+            f.btn_Edit.Image = imageList_48.Images["Edit_48.png"];
+            f.btn_Save.Image = imageList_48.Images["Save_48.png"];
+            f.btn_Cancel.Image = imageList_48.Images["Cancel_48.png"];
+            f.btn_Delete.Image = imageList_48.Images["Delete_48.png"];
+            f.frm_main = this;
+            f.Text = "دليل الحسابات";
 
             f.Show();
         }

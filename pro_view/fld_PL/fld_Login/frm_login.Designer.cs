@@ -54,7 +54,7 @@
             this.txt_Name.Location = new System.Drawing.Point(347, 89);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(193, 24);
-            this.txt_Name.TabIndex = 2;
+            this.txt_Name.TabIndex = 0;
             this.txt_Name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_Login
@@ -64,7 +64,7 @@
             this.btn_Login.Location = new System.Drawing.Point(347, 191);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(193, 35);
-            this.btn_Login.TabIndex = 1;
+            this.btn_Login.TabIndex = 2;
             this.btn_Login.Text = "LOGIN";
             this.btn_Login.UseVisualStyleBackColor = false;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
@@ -75,7 +75,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.PasswordChar = '*';
             this.txt_Password.Size = new System.Drawing.Size(193, 24);
-            this.txt_Password.TabIndex = 0;
+            this.txt_Password.TabIndex = 1;
             this.txt_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
@@ -132,10 +132,12 @@
             this.btn_Demo.Location = new System.Drawing.Point(364, 290);
             this.btn_Demo.Name = "btn_Demo";
             this.btn_Demo.Size = new System.Drawing.Size(167, 35);
-            this.btn_Demo.TabIndex = 7;
+            this.btn_Demo.TabIndex = 3;
             this.btn_Demo.Text = "دخول النسخة التجريبية";
             this.btn_Demo.UseVisualStyleBackColor = false;
             this.btn_Demo.Click += new System.EventHandler(this.btn_Demo_Click);
+            this.btn_Demo.MouseEnter += new System.EventHandler(this.btn_Demo_MouseEnter);
+            this.btn_Demo.MouseLeave += new System.EventHandler(this.btn_Demo_MouseLeave);
             // 
             // btn_ServerConSettings
             // 
@@ -146,10 +148,12 @@
             this.btn_ServerConSettings.Location = new System.Drawing.Point(38, 290);
             this.btn_ServerConSettings.Name = "btn_ServerConSettings";
             this.btn_ServerConSettings.Size = new System.Drawing.Size(167, 35);
-            this.btn_ServerConSettings.TabIndex = 8;
+            this.btn_ServerConSettings.TabIndex = 4;
             this.btn_ServerConSettings.Text = "إعدادات الإتصال بالسيرفر";
             this.btn_ServerConSettings.UseVisualStyleBackColor = false;
             this.btn_ServerConSettings.Click += new System.EventHandler(this.btn_ServerConSettings_Click);
+            this.btn_ServerConSettings.MouseEnter += new System.EventHandler(this.btn_ServerConSettings_MouseEnter);
+            this.btn_ServerConSettings.MouseLeave += new System.EventHandler(this.btn_ServerConSettings_MouseLeave);
             // 
             // frm_login
             // 
